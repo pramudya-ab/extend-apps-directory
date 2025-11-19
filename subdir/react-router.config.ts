@@ -5,5 +5,5 @@ export default {
   // Server-side render by default, to enable SPA mode set this to `false`
   ssr: false,
   prerender: ['/'],
-  basename: process.env.NODE_ENV === 'development' ? '/extend-apps-explorer/' : undefined
+  basename: process.env.NODE_ENV === 'development' ? '/extend-apps-explorer/' : '/'
 } satisfies Config;
