@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css'
+import "bootstrap/dist/css/bootstrap.css";
 import {
   isRouteErrorResponse,
   Links,
@@ -10,7 +10,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import Home from './routes/home';
+import Home from "./routes/home";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -53,14 +53,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    // message = error.status === 404 ? "404" : "Error";
-    // details =
-    //   error.status === 404
-    //     ? "The requested page could not be found."
-    //     : error.statusText || details;
-    return (
-      <Home />
-    )
+    return <Home />;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;
