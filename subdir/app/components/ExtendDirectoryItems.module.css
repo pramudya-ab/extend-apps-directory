@@ -22,7 +22,9 @@
 }
 
 .itemTags {
-  gap: 4px;
+  :global(.ant-tag) {
+    margin-inline-end: 4px;
+  }
 }
 
 @media (max-width: 480px) {

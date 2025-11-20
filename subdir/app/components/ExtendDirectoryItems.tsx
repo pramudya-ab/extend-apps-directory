@@ -48,7 +48,10 @@ const ExtendDirectoryItem = ({
 
   return (
     <li>
-      <Link to={`?${newSearchParams.toString()}`} preventScrollReset>
+      <ConditionalLink
+        isComingSoon={isComingSoon}
+        to={`?${newSearchParams.toString()}`}
+      >
         <Card
           hoverable
           styles={{
@@ -61,7 +64,7 @@ const ExtendDirectoryItem = ({
             },
           }}
           className={styles.extendItem}
-          style={{ position: "relative", overflow: "hidden" }}
+          style={{ position: "relative", overflow: "hidden", cursor: isComingSoon ? 'default' : 'pointer' }}
         >
           {isComingSoon && (
             <Tag
@@ -102,7 +105,7 @@ const ExtendDirectoryItem = ({
             <RepositoryLanguages repositories={repositories} />
           </div>
         </Card>
-      </Link>
+      </ConditionalLink>
     </li>
   );
 };
@@ -118,5 +121,27 @@ export const ExtendDirectoryItems = ({
         <ExtendDirectoryItem {...item} key={item.id} />
       ))}
     </ul>
+  );
+};
+
+interface ConditionalLinkProps {
+  isComingSoon: boolean;
+  to: string;
+  children: React.ReactNode;
+}
+
+const ConditionalLink = ({
+  isComingSoon,
+  to,
+  children,
+}: ConditionalLinkProps) => {
+  if (isComingSoon) {
+    return <>{children}</>;
+  }
+
+  return (
+    <Link to={to} preventScrollReset>
+      {children}
+    </Link>
   );
 };

@@ -58,14 +58,15 @@ export default function Home() {
             </Title>
             <Text className={styles.title}>Enhance your games with powerful Extend apps crafted by our community.</Text>
           </div>
-          <div>
+          {/* Temporarily hidden because currently all extend app templates are developed by AB */}
+          {/* <div>
             <Select
               prefix="Developed by:"
               value={developedBy || FilterDevelopedBy.All}
               onChange={handleDevelopedByChange}
               options={DEVELOPED_BY_OPTIONS}
             />
-          </div>
+          </div> */}
           <ExtendDirectoryItems data={extendApps as ExtendDirectoryAppInfo[]} />
         </div>
       </main>

@@ -115,21 +115,6 @@
     ]
   },
   {
-    "id": "446b70c7a0dc454597043455585add36",
-    "imageUrl": "/extend-apps-explorer/ggwp.png",
-    "title": "Profanity Filter",
-    "description": "A service that detects messages containing blacklisted words to support positive and respectful in-game communication.",
-    "creator": "GGWP",
-    "repositories": [
-      {
-        "title": "Profanity Filter",
-        "description": "Go service that scans text for blacklisted terms.",
-        "url": "https://github.com/AccelByte/profanity-filter-go",
-        "language": "Go"
-      }
-    ]
-  },
-  {
     "id": "03ec7ab3901c459e9d6707fe664c746c",
     "imageUrl": "/extend-apps-explorer/mmr_calculator.png",
     "title": "MMR Calculator",
@@ -157,6 +142,15 @@
     "imageUrl": "/extend-apps-explorer/eos_voice_integration.png",
     "title": "EOS Voice Integration",
     "description": "Keeps EOS Voice rooms in sync with AGS session and party state, and sends RTC credentials to clients through Lobby notifications.",
-    "creator": "AccelByte"
+    "creator": "AccelByte",
+    "repositories": [
+      {
+        "title": "Extend EOS Voice Integration",
+        "description": "Go event handler that creates and updates EOS Voice rooms based on session and party events.",
+        "url": "https://github.com/AccelByte/extend-eos-voice-rtc",
+        "language": "Go",
+        "type": "event-handler"
+      }
+    ]
   }
 ]
